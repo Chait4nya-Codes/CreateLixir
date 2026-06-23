@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CreateLixir — Build Software With AI Engineering Teams</title>
+<meta name="description" content="An AI-Powered Software Creation Operating System. Plan, design, build, deploy, and improve from a single intelligent workspace." />
+<meta property="og:title" content="CreateLixir — Build Software With AI Engineering Teams" />
+<meta property="og:description" content="Plan. Design. Build. Deploy. Improve. All from a single intelligent workspace." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        background: '#ffffff',
+        foreground: '#111111',
+        primary: { DEFAULT: '#111111', foreground: '#ffffff' },
+        accent: '#11212D',
+        muted: { DEFAULT: '#f5f5f5', foreground: '#5b6470' },
+        card: '#fafafa',
+        border: '#ececec',
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['"Instrument Serif"', 'serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: #111; background: #fff; -webkit-font-smoothing: antialiased; }
+  .font-display { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.01em; }
+  .container-x { max-width: 1200px; margin: 0 auto; padding-left: 1.5rem; padding-right: 1.5rem; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: #111; color: #fff; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; transition: transform .2s, background .2s; }
+  .btn-primary:hover { background: #000; transform: translateY(-1px); }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: #fff; color: #111; border: 1px solid #ececec; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; transition: background .2s; }
+  .btn-secondary:hover { background: #fafafa; }
+  .badge-pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.85rem; border: 1px solid #ececec; background: #fff; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; color: #111; }
+  .card-surface { background: #fff; border: 1px solid #ececec; border-radius: 1rem; transition: border-color .2s, transform .2s; }
+  .card-surface:hover { border-color: #d4d4d4; }
+  .hairline { height: 1px; background: linear-gradient(to right, transparent, #ececec, transparent); }
+  .grid-bg { background-image: linear-gradient(#0001 1px, transparent 1px), linear-gradient(90deg, #0001 1px, transparent 1px); background-size: 48px 48px; }
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  .dot { width: 6px; height: 6px; border-radius: 9999px; background: #111; display: inline-block; }
+  .arrow::after { content: '→'; margin-left: .35rem; }
+  .nav-blur { backdrop-filter: saturate(180%) blur(14px); background: rgba(255,255,255,0.72); }
+  .marquee-track { display: flex; gap: 2.5rem; white-space: nowrap; animation: scroll 35s linear infinite; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .grad-dark { background: radial-gradient(120% 80% at 10% 0%, #1b2a36 0%, #06141B 50%, #000 100%); }
+  .agent-card:hover { transform: translateY(-2px); }
+  input, button { font-family: inherit; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 nav-blur border-b border-border">
+  <div class="container-x flex h-16 items-center justify-between">
+    <a href="#top" class="flex items-center gap-2">
+      <span class="h-7 w-7 rounded-md bg-[#06141B] grid place-items-center text-white text-xs font-semibold">C</span>
+      <span class="font-display text-xl">CreateLixir</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+      <a href="#vision" class="hover:text-foreground">Vision</a>
+      <a href="#agents" class="hover:text-foreground">AI Teams</a>
+      <a href="#story" class="hover:text-foreground">Platform</a>
+      <a href="#team" class="hover:text-foreground">Careers</a>
+    </nav>
+    <a href="#waitlist" class="btn-primary">Join Waitlist</a>
+  </div>
+</header>
+
+<main id="top" class="pt-24">
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="grid-bg pointer-events-none absolute inset-0" style="mask-image: radial-gradient(ellipse at top, black 30%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at top, black 30%, transparent 70%);"></div>
+    <div class="container-x relative pt-10 pb-20 md:pt-20 md:pb-28">
+      <div class="mx-auto max-w-3xl text-center">
+        <div class="badge-pill mx-auto reveal"><span class="dot"></span> Coming Soon</div>
+        <h1 class="font-display mt-7 text-5xl leading-[1.02] tracking-tight sm:text-6xl md:text-[80px] reveal">
+          Build software with<br/>
+          <span class="italic text-accent">AI engineering teams</span>
+        </h1>
+        <p class="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground reveal">
+          CreateLixir is an AI-Powered Software Creation Operating System that transforms ideas into production-ready software. Plan, design, build, deploy, and improve — all from a single intelligent workspace.
+        </p>
+        <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row reveal">
+          <a href="#waitlist" class="btn-primary">Join Waitlist →</a>
+          <a href="#vision" class="btn-secondary">▶ Watch Vision</a>
+        </div>
+      </div>
+
+      <!-- Dashboard preview -->
+      <div class="mx-auto mt-16 max-w-6xl reveal">
+        <div class="rounded-2xl border border-border bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.18)] overflow-hidden">
+          <div class="flex items-center gap-2 border-b border-border px-4 py-3 bg-[#fafafa]">
+            <span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+            <div class="ml-4 text-xs text-muted-foreground">createlixir.app / project / atlas</div>
+          </div>
+          <div class="grid md:grid-cols-[220px_1fr] min-h-[360px]">
+            <aside class="border-r border-border p-5 text-sm space-y-4 bg-[#fcfcfc]">
+              <p class="text-[11px] uppercase tracking-widest text-muted-foreground">Workspace</p>
+              <ul class="space-y-2">
+                <li class="flex items-center gap-2 text-foreground"><span class="dot"></span> Project Brain</li>
+                <li class="text-muted-foreground">Architecture</li>
+                <li class="text-muted-foreground">Build Story</li>
+                <li class="text-muted-foreground">Agents</li>
+                <li class="text-muted-foreground">Deploy</li>
+              </ul>
+            </aside>
+            <div class="p-6">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="text-xs uppercase tracking-widest text-muted-foreground">Atlas CRM</p>
+                  <h3 class="font-display text-2xl mt-1">Production-ready in 4 sprints</h3>
+                </div>
+                <span class="badge-pill"><span class="dot"></span> Live</span>
+              </div>
+              <div class="mt-6 grid grid-cols-3 gap-3">
+                <div class="rounded-xl border border-border p-4">
+                  <p class="text-xs text-muted-foreground">Tasks done</p>
+                  <p class="font-display text-3xl mt-1">128</p>
+                </div>
+                <div class="rounded-xl border border-border p-4">
+                  <p class="text-xs text-muted-foreground">Agents active</p>
+                  <p class="font-display text-3xl mt-1">9</p>
+                </div>
+                <div class="rounded-xl border border-border p-4">
+                  <p class="text-xs text-muted-foreground">Uptime</p>
+                  <p class="font-display text-3xl mt-1">99.99%</p>
+                </div>
+              </div>
+              <div class="mt-5 rounded-xl border border-border p-4 text-sm leading-relaxed text-muted-foreground">
+                <span class="text-foreground font-medium">Architect</span> proposed a Postgres + edge functions topology. <span class="text-foreground font-medium">QA Agent</span> verified 47 flows. Continuation agent will deploy at 02:00.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <section class="border-y border-border bg-[#fafafa]/60 overflow-hidden">
+    <div class="py-6">
+      <div class="marquee-track text-xs uppercase tracking-[0.18em] text-muted-foreground">
+        <span>Project Brain</span><span>·</span>
+        <span>AI Architect</span><span>·</span>
+        <span>Project Intelligence</span><span>·</span>
+        <span>Continuation Agents</span><span>·</span>
+        <span>Knowledge Graph</span><span>·</span>
+        <span>Build Story</span><span>·</span>
+        <span>AI Engineering Teams</span><span>·</span>
+        <span>Project Brain</span><span>·</span>
+        <span>AI Architect</span><span>·</span>
+        <span>Project Intelligence</span><span>·</span>
+        <span>Continuation Agents</span><span>·</span>
+        <span>Knowledge Graph</span><span>·</span>
+        <span>Build Story</span><span>·</span>
+        <span>AI Engineering Teams</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="container-x py-24 md:py-32">
+    <div class="grid gap-12 md:grid-cols-2 md:gap-20">
+      <div class="reveal">
+        <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">The Problem</p>
+        <h2 class="font-display mt-4 text-4xl leading-tight md:text-5xl">Software creation is more than writing code.</h2>
+      </div>
+      <div class="space-y-5 text-base leading-relaxed text-muted-foreground md:pt-12 reveal">
+        <p>Today's tools generate code. But software creation requires architecture, context, documentation, deployment, monitoring, maintenance, and continuous decision making.</p>
+        <p>Most of these systems remain disconnected.</p>
+        <p class="text-foreground">CreateLixir is designed to unify them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="vision" class="container-x py-24 md:py-32">
+    <div class="max-w-3xl reveal">
+      <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Why CreateLixir</p>
+      <h2 class="font-display mt-4 text-4xl leading-tight md:text-5xl">A new category of software creation.</h2>
+    </div>
+    <div class="mt-14 grid gap-5 md:grid-cols-3">
+      <div class="card-surface p-7 reveal">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white">🧠</span>
+        <p class="mt-6 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Project Brain™</p>
+        <h3 class="font-display mt-3 text-2xl">Your software finally has a memory.</h3>
+        <p class="mt-4 text-sm leading-relaxed text-muted-foreground">Every requirement, architecture decision, feature, API, and discussion is remembered and connected.</p>
+      </div>
+      <div class="card-surface p-7 reveal">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white">✦</span>
+        <p class="mt-6 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Project Intelligence™</p>
+        <h3 class="font-display mt-3 text-2xl">Ask your software why.</h3>
+        <p class="mt-4 text-sm leading-relaxed text-muted-foreground">Understand why every file exists, why technologies were chosen, and why decisions were made.</p>
+      </div>
+      <div class="card-surface p-7 reveal">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-white">◍</span>
+        <p class="mt-6 text-[11px] uppercase tracking-[0.18em] text-muted-foreground">AI Architect</p>
+        <h3 class="font-display mt-3 text-2xl">Architecture before code.</h3>
+        <p class="mt-4 text-sm leading-relaxed text-muted-foreground">Plan architecture, databases, APIs, security, and scalability before development begins.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="bg-[#fafafa]/70 py-24 md:py-32">
+    <div class="container-x">
+      <div class="max-w-3xl reveal">
+        <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">How It Works</p>
+        <h2 class="font-display mt-4 text-4xl leading-tight md:text-5xl">From idea to production, in four moves.</h2>
+      </div>
+      <div class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-border bg-border md:grid-cols-4">
+        <div class="bg-white p-7">
+          <div class="flex items-center justify-between"><span class="text-xs tracking-widest text-muted-foreground">01</span><span>💡</span></div>
+          <h3 class="font-display mt-6 text-2xl">Describe your idea</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Example: Build an AI CRM.</p>
+        </div>
+        <div class="bg-white p-7">
+          <div class="flex items-center justify-between"><span class="text-xs tracking-widest text-muted-foreground">02</span><span>⌥</span></div>
+          <h3 class="font-display mt-6 text-2xl">CreateLixir creates the plan</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Requirements, architecture, APIs, and database design.</p>
+        </div>
+        <div class="bg-white p-7">
+          <div class="flex items-center justify-between"><span class="text-xs tracking-widest text-muted-foreground">03</span><span>◫</span></div>
+          <h3 class="font-display mt-6 text-2xl">Build the product</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Frontend, backend, authentication, and integrations.</p>
+        </div>
+        <div class="bg-white p-7">
+          <div class="flex items-center justify-between"><span class="text-xs tracking-widest text-muted-foreground">04</span><span>↗</span></div>
+          <h3 class="font-display mt-6 text-2xl">Deploy and improve</h3>
+          <p class="mt-3 text-sm leading-relaxed text-muted-foreground">Launch the product and evolve it continuously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTS -->
+  <section id="agents" class="container-x py-24 md:py-32">
+    <div class="grid items-end gap-8 md:grid-cols-[1.2fr_1fr]">
+      <div class="reveal">
+        <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">AI Engineering Team</p>
+        <h2 class="font-display mt-4 text-4xl leading-tight md:text-5xl">More than one AI.</h2>
+      </div>
+      <p class="text-base leading-relaxed text-muted-foreground reveal">CreateLixir brings together specialized AI systems that collaborate like a real software organization.</p>
+    </div>
+    <div class="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" id="agentGrid">
+      <!-- agents injected -->
+    </div>
+    <p class="mt-8 text-sm text-muted-foreground">And many more specialized agents working together.</p>
+  </section>
+
+  <!-- STORY / SIGNATURE -->
+  <section id="story" class="container-x py-24 md:py-32 border-t border-border">
+    <div class="grid gap-16 md:grid-cols-2 md:gap-20">
+      <div class="space-y-24">
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Project Brain™</p>
+          <h3 class="font-display mt-4 text-4xl leading-tight">Your software remembers everything.</h3>
+          <p class="mt-5 text-muted-foreground leading-relaxed">Unlike traditional AI tools, CreateLixir builds a persistent understanding of your product — vision, features, architecture, APIs, database design, user goals, and product decisions.</p>
+        </div>
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Project Intelligence™</p>
+          <h3 class="font-display mt-4 text-4xl leading-tight">Ask questions. Get answers.</h3>
+          <p class="mt-5 text-muted-foreground leading-relaxed">Why does this API exist? Why was PostgreSQL chosen? What problem does this feature solve? CreateLixir understands your software beyond code.</p>
+        </div>
+        <div class="reveal">
+          <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Continuation Agents™</p>
+          <h3 class="font-display mt-4 text-4xl leading-tight">Your build doesn't stop when you leave.</h3>
+          <p class="mt-5 text-muted-foreground leading-relaxed">When sessions end, CreateLixir saves context and continues execution through continuation agents. Projects keep moving forward without losing momentum.</p>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <div class="sticky top-28 aspect-square rounded-2xl border border-border bg-white p-8 grid place-items-center">
+          <svg viewBox="0 0 300 300" class="w-full h-full">
+            <defs>
+              <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#11212D" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#11212D" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="150" cy="150" r="120" fill="url(#g1)"/>
+            <circle cx="150" cy="150" r="80" fill="none" stroke="#11212D" stroke-opacity=".2"/>
+            <circle cx="150" cy="150" r="40" fill="#06141B"/>
+            <g stroke="#11212D" stroke-opacity=".25">
+              <line x1="150" y1="150" x2="40" y2="60"/>
+              <line x1="150" y1="150" x2="260" y2="80"/>
+              <line x1="150" y1="150" x2="50" y2="240"/>
+              <line x1="150" y1="150" x2="260" y2="230"/>
+            </g>
+            <g fill="#fff" stroke="#06141B">
+              <circle cx="40" cy="60" r="6"/>
+              <circle cx="260" cy="80" r="6"/>
+              <circle cx="50" cy="240" r="6"/>
+              <circle cx="260" cy="230" r="6"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE VISION -->
+  <section id="roadmap" class="container-x py-24 md:py-32">
+    <div class="overflow-hidden rounded-3xl border border-border grad-dark text-white">
+      <div class="grid items-center gap-12 p-10 md:grid-cols-2 md:p-16">
+        <div>
+          <span class="badge-pill border-white/20 bg-white/10 text-white"><span class="h-1.5 w-1.5 rounded-full bg-white/80"></span> Future Release</span>
+          <h2 class="font-display mt-6 text-4xl leading-tight md:text-5xl">Autonomous AI engineering teams.</h2>
+          <p class="mt-5 max-w-md leading-relaxed text-white/70">The future of CreateLixir is a coordinated AI engineering organization capable of planning, designing, building, testing, deploying, maintaining, and improving software collaboratively.</p>
+        </div>
+        <div class="aspect-square w-full">
+          <svg viewBox="0 0 300 300" class="w-full h-full">
+            <g stroke="#ffffff" stroke-opacity=".25">
+              <line x1="150" y1="50" x2="60" y2="150"/>
+              <line x1="150" y1="50" x2="240" y2="150"/>
+              <line x1="60" y1="150" x2="100" y2="250"/>
+              <line x1="240" y1="150" x2="200" y2="250"/>
+              <line x1="100" y1="250" x2="200" y2="250"/>
+              <line x1="150" y1="50" x2="150" y2="150"/>
+              <line x1="60" y1="150" x2="150" y2="150"/>
+              <line x1="240" y1="150" x2="150" y2="150"/>
+            </g>
+            <g>
+              <circle cx="150" cy="50" r="8" fill="#fff"/>
+              <circle cx="60" cy="150" r="8" fill="#fff"/>
+              <circle cx="240" cy="150" r="8" fill="#fff"/>
+              <circle cx="100" cy="250" r="8" fill="#fff"/>
+              <circle cx="200" cy="250" r="8" fill="#fff"/>
+              <circle cx="150" cy="150" r="14" fill="#fff"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="team" class="container-x py-24 md:py-32">
+    <div class="grid gap-12 md:grid-cols-2 md:gap-20">
+      <div class="reveal">
+        <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Join The Building Team</p>
+        <h2 class="font-display mt-4 text-4xl leading-tight md:text-5xl">Help build the future of software creation.</h2>
+        <p class="mt-6 max-w-md leading-relaxed text-muted-foreground">We're looking for ambitious builders, engineers, designers, AI researchers, marketers, and operators who want to help create the next generation of software development.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="mailto:hello@createlixir.com" class="btn-primary">Join The Team →</a>
+          <a href="mailto:hello@createlixir.com" class="btn-secondary">Contact Us</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2">
+        <div class="flex items-center justify-between bg-white p-5 hover:bg-[#fafafa]"><span class="text-sm">Frontend Engineer</span><span class="text-muted-foreground">↗</span></div>
+        <div class="flex items-center justify-between bg-white p-5 hover:bg-[#fafafa]"><span class="text-sm">Backend Engineer</span><span class="text-muted-foreground">↗</span></div>
+        <div class="flex items-center justify-between bg-white p-5 hover:bg-[#fafafa]"><span class="text-sm">AI Engineer</span><span class="text-muted-foreground">↗</span></div>
+        <div class="flex items-center justify-between bg-white p-5 hover:bg-[#fafafa]"><span class="text-sm">Product Designer</span><span class="text-muted-foreground">↗</span></div>
+        <div class="flex items-center justify-between bg-white p-5 hover:bg-[#fafafa]"><span class="text-sm">Developer Relations</span><span class="text-muted-foreground">↗</span></div>
+        <div class="flex items-center justify-between bg-white p-5 hover:bg-[#fafafa]"><span class="text-sm">Growth & Marketing</span><span class="text-muted-foreground">↗</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section id="waitlist" class="bg-[#fafafa]/70 py-24 md:py-32">
+    <div class="container-x grid gap-12 md:grid-cols-[1.1fr_1fr] md:gap-20">
+      <div class="reveal">
+        <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Waitlist</p>
+        <h2 class="font-display mt-4 text-4xl leading-tight md:text-5xl">Be first to experience CreateLixir.</h2>
+        <p class="mt-6 max-w-md leading-relaxed text-muted-foreground">Join founders, developers, startups, creators, and builders waiting for the future of software creation.</p>
+        <ul class="mt-8 grid max-w-md grid-cols-2 gap-3 text-sm">
+          <li class="flex items-center gap-2"><span class="dot"></span> Early Access</li>
+          <li class="flex items-center gap-2"><span class="dot"></span> Beta Invitations</li>
+          <li class="flex items-center gap-2"><span class="dot"></span> Founder Updates</li>
+          <li class="flex items-center gap-2"><span class="dot"></span> Community Access</li>
+        </ul>
+      </div>
+      <form class="card-surface p-7 space-y-4" onsubmit="event.preventDefault(); this.querySelector('#wlMsg').classList.remove('hidden'); this.reset();">
+        <div>
+          <label class="text-xs uppercase tracking-widest text-muted-foreground">Name</label>
+          <input required type="text" class="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm outline-none focus:border-foreground" placeholder="Your name" />
+        </div>
+        <div>
+          <label class="text-xs uppercase tracking-widest text-muted-foreground">Email</label>
+          <input required type="email" class="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm outline-none focus:border-foreground" placeholder="you@company.com" />
+        </div>
+        <div>
+          <label class="text-xs uppercase tracking-widest text-muted-foreground">Role</label>
+          <select class="mt-2 w-full rounded-xl border border-border bg-white px-4 py-3 text-sm outline-none focus:border-foreground">
+            <option>Founder</option><option>Developer</option><option>Designer</option><option>Operator</option><option>Investor</option><option>Other</option>
+          </select>
+        </div>
+        <button class="btn-primary w-full justify-center">Join Waitlist →</button>
+        <p id="wlMsg" class="hidden text-sm text-foreground">You're on the list. We'll be in touch soon.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section id="founder" class="container-x py-24 md:py-32">
+    <div class="mx-auto max-w-3xl reveal">
+      <p class="text-xs uppercase tracking-[0.2em] text-muted-foreground">Founder Note</p>
+      <h2 class="font-display mt-4 text-4xl leading-tight md:text-5xl">Why we're building CreateLixir.</h2>
+      <div class="mt-8 space-y-5 text-lg leading-relaxed text-muted-foreground">
+        <p>Software creation is becoming increasingly complex.</p>
+        <p>We believe software should understand itself, remember its history, explain its decisions, and continuously improve.</p>
+        <p class="text-foreground">CreateLixir is our first step toward that future.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="container-x pb-28">
+    <div class="mx-auto max-w-3xl text-center reveal">
+      <h2 class="font-display text-4xl leading-tight md:text-6xl">The future of software creation starts here.</h2>
+      <p class="mx-auto mt-6 max-w-xl leading-relaxed text-muted-foreground">Join the waitlist and help shape the next generation of software creation.</p>
+      <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a href="#waitlist" class="btn-primary">Join Waitlist →</a>
+        <a href="#vision" class="btn-secondary">Explore Vision</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t bg-[#06141B] text-white" style="border-color:#0a1a2f;">
+  <div class="container-x py-14 grid gap-10 md:grid-cols-4">
+    <div class="md:col-span-2">
+      <div class="flex items-center gap-2">
+        <span class="h-7 w-7 rounded-md bg-white/10 grid place-items-center text-xs font-semibold">C</span>
+        <span class="font-display text-xl">CreateLixir</span>
+      </div>
+      <p class="mt-4 max-w-sm text-sm text-white/60">An AI-Powered Software Creation Operating System. Plan, design, build, deploy, and improve from one workspace.</p>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-widest text-white/50">Product</p>
+      <ul class="mt-4 space-y-2 text-sm text-white/80">
+        <li><a href="#vision" class="hover:text-white">Vision</a></li>
+        <li><a href="#agents" class="hover:text-white">AI Teams</a></li>
+        <li><a href="#story" class="hover:text-white">Platform</a></li>
+        <li><a href="#roadmap" class="hover:text-white">Roadmap</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-xs uppercase tracking-widest text-white/50">Company</p>
+      <ul class="mt-4 space-y-2 text-sm text-white/80">
+        <li><a href="#team" class="hover:text-white">Careers</a></li>
+        <li><a href="#founder" class="hover:text-white">Founder Note</a></li>
+        <li><a href="mailto:hello@createlixir.com" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="container-x py-6 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50">
+      <p>© <span id="yr"></span> CreateLixir. All rights reserved.</p>
+      <p>Made for builders.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Agents
+  const agents = [
+    ['Product Manager', 'Defines requirements and roadmap.'],
+    ['Architect', 'Designs systems, APIs, and data models.'],
+    ['Designer', 'Crafts interfaces and product surfaces.'],
+    ['Frontend Engineer', 'Builds polished, accessible UIs.'],
+    ['Backend Engineer', 'Implements services and APIs.'],
+    ['DevOps Engineer', 'Owns deployment and infrastructure.'],
+    ['QA Engineer', 'Tests, verifies, and prevents regressions.'],
+    ['Marketing Agent', 'Crafts narrative and positioning.'],
+    ['Sales Agent', 'Reaches users and qualifies demand.'],
+  ];
+  document.getElementById('agentGrid').innerHTML = agents.map(([n, r]) => `
+    <div class="agent-card card-surface flex items-start gap-4 p-5 transition-transform">
+      <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-white text-foreground">◆</span>
+      <div>
+        <p class="text-sm font-semibold">${n}</p>
+        <p class="mt-1 text-sm leading-relaxed text-muted-foreground">${r}</p>
+      </div>
+    </div>
+  `).join('');
+</script>
+
+</body>
+</html>
